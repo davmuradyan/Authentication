@@ -1,7 +1,7 @@
 using Authentication.Domain.Entities.Auth;
 using Authentication.Domain.Entities.RolePermission;
 
-namespace Authentication.Application.Services.Repositories;
+namespace Authentication.Application.Services.Repositories.Auth;
 
 public interface IUserRepository
 {

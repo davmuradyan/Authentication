@@ -1,4 +1,5 @@
 using Authentication.Application.Services.Repositories;
+using Authentication.Application.Services.Repositories.Auth;
 using Authentication.Domain.Entities.Auth;
 using Authentication.Infrastructure.Database;
 using Authentication.Infrastructure.Database;

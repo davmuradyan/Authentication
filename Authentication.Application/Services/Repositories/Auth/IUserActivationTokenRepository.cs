@@ -1,6 +1,6 @@
 using Authentication.Domain.Entities.Auth;
 
-namespace Authentication.Application.Services.Repositories;
+namespace Authentication.Application.Services.Repositories.Auth;
 
 public interface IUserActivationTokenRepository
 {

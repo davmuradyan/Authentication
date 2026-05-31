@@ -1,4 +1,4 @@
-namespace Authentication.Application.Services.Repositories;
+namespace Authentication.Application.Services.Repositories.Company;
 
 public interface ICompanyRepository
 {

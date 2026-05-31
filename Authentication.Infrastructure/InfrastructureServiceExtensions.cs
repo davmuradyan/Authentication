@@ -1,6 +1,8 @@
 using Authentication.Application.Services.Email;
 using Authentication.Application.Services.HashFunctions;
 using Authentication.Application.Services.Repositories;
+using Authentication.Application.Services.Repositories.Auth;
+using Authentication.Application.Services.Repositories.Company;
 using Authentication.Application.Services.Tokens;
 using Authentication.Infrastructure.Implementations.Email;
 using Authentication.Infrastructure.Implementations.HashFunctions;

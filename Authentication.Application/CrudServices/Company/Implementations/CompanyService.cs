@@ -1,8 +1,9 @@
-using Authentication.Application.Services.Repositories;
+using Authentication.Application.CrudServices.Company.Interfaces;
+using Authentication.Application.Services.Repositories.Company;
 using Authentication.Contracts.Crud.Company.Dtos;
 using Authentication.Contracts.Crud.Company.Results;
 
-namespace Authentication.Application.CrudServices.Company;
+namespace Authentication.Application.CrudServices.Company.Implementations;
 
 public class CompanyService(ICompanyRepository companyRepository) : ICompanyService
 {

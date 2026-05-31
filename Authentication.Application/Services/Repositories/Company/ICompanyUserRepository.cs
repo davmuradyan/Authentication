@@ -1,7 +1,6 @@
-using Authentication.Domain.Entities;
 using Authentication.Domain.Entities.Company;
 
-namespace Authentication.Application.Services.Repositories;
+namespace Authentication.Application.Services.Repositories.Company;
 
 public interface ICompanyUserRepository
 {

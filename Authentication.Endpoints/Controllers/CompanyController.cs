@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Authentication.Application.CrudServices.Company;
+using Authentication.Application.CrudServices.Company.Interfaces;
 using Authentication.Contracts.Crud.Company.Dtos;
 using Authentication.Infrastructure;
 using Microsoft.AspNetCore.Authorization;

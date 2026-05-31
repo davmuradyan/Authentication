@@ -4,6 +4,8 @@ using Authentication.Application.Services.Repositories;
 using Authentication.Contracts.Auth.Dtos;
 using Authentication.Contracts.Auth.Results;
 using Authentication.Application.Services.HashFunctions;
+using Authentication.Application.Services.Repositories.Auth;
+using Authentication.Application.Services.Repositories.Company;
 using Authentication.Application.Services.Tokens;
 using Authentication.Contracts.Auth.Dtos.Creation;
 using Authentication.Contracts.Auth.Dtos.Login;
