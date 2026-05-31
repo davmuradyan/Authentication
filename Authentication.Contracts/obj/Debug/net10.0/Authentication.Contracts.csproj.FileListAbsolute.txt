@@ -1,0 +1,11 @@
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\bin\Debug\net10.0\Authentication.Contracts.deps.json
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\bin\Debug\net10.0\Authentication.Contracts.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\bin\Debug\net10.0\Authentication.Contracts.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.AssemblyInfoInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.AssemblyInfo.cs
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\refint\Authentication.Contracts.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\Authentication.Contracts.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Contracts\obj\Debug\net10.0\ref\Authentication.Contracts.dll

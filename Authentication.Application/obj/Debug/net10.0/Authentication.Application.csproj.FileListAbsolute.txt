@@ -1,0 +1,17 @@
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Application.deps.json
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Application.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Application.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Contracts.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Domain.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Contracts.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\bin\Debug\net10.0\Authentication.Domain.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.csproj.AssemblyReference.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.AssemblyInfoInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.AssemblyInfo.cs
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.csproj.CoreCompileInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authenti.BD76F788.Up2Date
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\refint\Authentication.Application.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\Authentication.Application.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Application\obj\Debug\net10.0\ref\Authentication.Application.dll

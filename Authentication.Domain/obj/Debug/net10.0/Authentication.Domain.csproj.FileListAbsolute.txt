@@ -1,0 +1,11 @@
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\bin\Debug\net10.0\Authentication.Domain.deps.json
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\bin\Debug\net10.0\Authentication.Domain.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\bin\Debug\net10.0\Authentication.Domain.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.AssemblyInfoInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.AssemblyInfo.cs
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.csproj.CoreCompileInputs.cache
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\refint\Authentication.Domain.dll
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\Authentication.Domain.pdb
+C:\Users\servi\Desktop\Projects\Authentication\Authentication.Domain\obj\Debug\net10.0\ref\Authentication.Domain.dll
