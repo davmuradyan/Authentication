@@ -1,3 +1,5 @@
+using Authentication.Domain.Entities.RolePermission;
+
 namespace Authentication.Domain.Entities.Auth;
 
 public class UserRole

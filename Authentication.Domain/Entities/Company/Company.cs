@@ -1,4 +1,4 @@
-namespace Authentication.Domain.Entities.Auth;
+namespace Authentication.Domain.Entities.Company;
 
 public class Company
 {

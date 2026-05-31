@@ -1,4 +1,5 @@
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.RolePermission;
 
 namespace Authentication.Application.Services.Repositories;
 
@@ -9,21 +10,21 @@ public interface IUserRepository
     /// </summary>
     /// <param name="user">The user to create.</param>
     /// <returns>Returns the created user.</returns>
-    Task<User> AddAsync(User user);
+    Task<User> Create(User user);
     
     /// <summary>
     /// Finds a user with provided id.
     /// </summary>
     /// <param name="userId">The provided id.</param>
     /// <returns>Returns the user if it exists or null otherwise.</returns>
-    Task<User?> GetByIdAsync(Guid userId);
+    Task<User?> GetById(Guid userId);
 
     /// <summary>
     /// Finds a user with provided id, but in readonly mode. Changes won't be saved in database.
     /// </summary>
     /// <param name="userId">The provided id.</param>
     /// <returns>Returns the user if it exists or null otherwise.</returns>
-    Task<User?> GetByIdReadOnlyAsync(Guid userId);
+    Task<User?> GetByIdReadOnly(Guid userId);
     
     /// <summary>
     /// Finds a user with provided email. 
@@ -47,17 +48,17 @@ public interface IUserRepository
     Task<ICollection<Permission>> GetUserPermissions(Guid userId);
     
     /// <summary>
+    /// Updates an existing user.
+    /// </summary>
+    /// <param name="user">The user to update.</param>
+    /// <returns></returns>
+    Task Update(User user);
+    
+    /// <summary>
     /// Removes user from the database.
     /// NOTE: Associated UserActivationTokens, UserRoles and CompanyUser will also be deleted due to cascade behavior.
     /// </summary>
     /// <param name="user">User to delete</param>
     /// <returns></returns>
-    Task DeleteAsync(User user);
-    
-    /// <summary>
-    /// Updates an existing user.
-    /// </summary>
-    /// <param name="user">The user to update.</param>
-    /// <returns></returns>
-    Task UpdateAsync(User user);
+    Task Delete(User user);
 }

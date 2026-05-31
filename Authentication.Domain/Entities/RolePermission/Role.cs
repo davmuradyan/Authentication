@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
+using Authentication.Domain.Entities.Auth;
 
-namespace Authentication.Domain.Entities.Auth;
+namespace Authentication.Domain.Entities.RolePermission;
 
 public class Role
 {

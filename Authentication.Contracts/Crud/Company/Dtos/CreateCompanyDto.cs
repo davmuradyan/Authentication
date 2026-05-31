@@ -1,4 +1,4 @@
-namespace Authentication.Contracts.Company.Dtos;
+namespace Authentication.Contracts.Crud.Company.Dtos;
 
 public class CreateCompanyDto
 {

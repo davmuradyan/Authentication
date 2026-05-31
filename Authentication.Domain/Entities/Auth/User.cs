@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Authentication.Domain.Entities.Company;
 
 namespace Authentication.Domain.Entities.Auth;
 

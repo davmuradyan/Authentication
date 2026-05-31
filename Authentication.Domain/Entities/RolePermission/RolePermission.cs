@@ -1,7 +1,4 @@
-using System;
-using Authentication.Domain.Entities.Auth;
-
-namespace Authentication.Domain.Entities.Auth;
+namespace Authentication.Domain.Entities.RolePermission;
 
 public class RolePermission
 {
@@ -23,4 +20,3 @@ public class RolePermission
         };
     }
 }
-

@@ -1,4 +1,4 @@
-namespace Authentication.Contracts.Company.Results;
+namespace Authentication.Contracts.Crud.Company.Results;
 
 public class CreateCompanyResult
 {

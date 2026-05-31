@@ -7,7 +7,7 @@ namespace Authentication.Infrastructure.Implementations.Repositories;
 
 public class UserActivationTokenRepository(MainDbContext context) : IUserActivationTokenRepository
 {
-    public async Task<UserActivationTokens> AddAsync(UserActivationTokens token)
+    public async Task<UserActivationTokens> Create(UserActivationTokens token)
     {
         try
         {
@@ -22,7 +22,7 @@ public class UserActivationTokenRepository(MainDbContext context) : IUserActivat
         }
     }
 
-    public async Task<UserActivationTokens?> GetByTokenAsync(string token)
+    public async Task<UserActivationTokens?> GetByToken(string token)
     {
         try
         {
@@ -35,7 +35,7 @@ public class UserActivationTokenRepository(MainDbContext context) : IUserActivat
         }
     }
 
-    public async Task<UserActivationTokens> GetByUserIdAsync(Guid userId)
+    public async Task<UserActivationTokens> GetByUserId(Guid userId)
     {
         try
         {
@@ -49,12 +49,12 @@ public class UserActivationTokenRepository(MainDbContext context) : IUserActivat
         }
     }
 
-    public Task<bool> MarkAsUsedAsync(Guid tokenId)
+    public Task<bool> MarkAsUsed(Guid tokenId)
     {
         throw new NotImplementedException();
     }
 
-    public async Task DeleteAsync(UserActivationTokens token)
+    public async Task Delete(UserActivationTokens token)
     {
         try
         {
@@ -73,7 +73,7 @@ public class UserActivationTokenRepository(MainDbContext context) : IUserActivat
         }
     }
 
-    public async Task UpdateAsync(UserActivationTokens token)
+    public async Task Update(UserActivationTokens token)
     {
         try
         {

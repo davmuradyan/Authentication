@@ -1,5 +1,6 @@
 using Authentication.Application.Services.Repositories;
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.RolePermission;
 using Authentication.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +8,7 @@ namespace Authentication.Infrastructure.Implementations.Repositories;
 
 public class UserRepository(MainDbContext context) : IUserRepository
 {
-    public async Task<User> AddAsync(User user)
+    public async Task<User> Create(User user)
     {
         try
         {
@@ -22,12 +23,12 @@ public class UserRepository(MainDbContext context) : IUserRepository
         }
     }
     
-    public async Task<User?> GetByIdAsync(Guid userId)
+    public async Task<User?> GetById(Guid userId)
     {
         return await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
     }
     
-    public async Task<User?> GetByIdReadOnlyAsync(Guid userId)
+    public async Task<User?> GetByIdReadOnly(Guid userId)
     {
         return await context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == userId);
     }
@@ -57,7 +58,7 @@ public class UserRepository(MainDbContext context) : IUserRepository
             .ToListAsync();
     }
 
-    public async Task DeleteAsync(User user)
+    public async Task Delete(User user)
     {
         try
         {
@@ -75,7 +76,7 @@ public class UserRepository(MainDbContext context) : IUserRepository
         }
     }
 
-    public async Task UpdateAsync(User user)
+    public async Task Update(User user)
     {
         try
         {

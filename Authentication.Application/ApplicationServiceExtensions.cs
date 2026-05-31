@@ -1,5 +1,5 @@
 using Authentication.Application.Auth;
-using Authentication.Application.Company;
+using Authentication.Application.CrudServices.Company;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Authentication.Application;

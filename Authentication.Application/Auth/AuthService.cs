@@ -9,6 +9,7 @@ using Authentication.Contracts.Auth.Dtos.Creation;
 using Authentication.Contracts.Auth.Dtos.Login;
 using Authentication.Domain.Entities;
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.Company;
 using Microsoft.AspNetCore.Http;
 
 namespace Authentication.Application.Auth;
@@ -97,7 +98,7 @@ public class AuthService(IUserRepository userRepository,
         var rawRefreshToken = tokenService.GenerateRawRefreshToken(); // random 64 bytes → base64
         var hashedRefreshToken = tokenHashService.Hash(rawRefreshToken);
 
-        await refreshTokenRepository.AddAsync(RefreshToken.Create(
+        await refreshTokenRepository.Create(RefreshToken.Create(
             user.Id, 
             hashedRefreshToken, 
             DateTime.UtcNow.AddDays(7),
@@ -131,7 +132,7 @@ public class AuthService(IUserRepository userRepository,
 
         // Hash the incoming refresh token and look it up
         var hashedRefreshToken = tokenHashService.Hash(refreshDto.RefreshToken);
-        var storedToken = await refreshTokenRepository.GetByTokenAsync(hashedRefreshToken);
+        var storedToken = await refreshTokenRepository.GetByToken(hashedRefreshToken);
 
         // Validate stored token
         if (storedToken is null)
@@ -156,7 +157,7 @@ public class AuthService(IUserRepository userRepository,
         }
 
         // Load user, roles and permissions for new access token
-        var user = await userRepository.GetByIdAsync(userId);
+        var user = await userRepository.GetById(userId);
         if (user is null || !user.IsActive)
         {
             return new RefreshResult { Success = false, Message = "User not found or deactivated." };
@@ -166,7 +167,7 @@ public class AuthService(IUserRepository userRepository,
         var permissions = await userRepository.GetUserPermissions(userId);
 
         // Revoke old refresh token
-        await refreshTokenRepository.RevokeAsync(storedToken);
+        await refreshTokenRepository.Revoke(storedToken);
 
         // Generate new tokens
         var newAccessToken = tokenService.GenerateAccessToken(user, roles, permissions);
@@ -174,7 +175,7 @@ public class AuthService(IUserRepository userRepository,
         var newHashedRefreshToken = tokenHashService.Hash(newRawRefreshToken);
 
         // Save new refresh token
-        await refreshTokenRepository.AddAsync(RefreshToken.Create(
+        await refreshTokenRepository.Create(RefreshToken.Create(
             userId, 
             newHashedRefreshToken,
             DateTime.UtcNow.AddDays(7), 
@@ -191,23 +192,23 @@ public class AuthService(IUserRepository userRepository,
     public async Task<bool> Logout(LogoutDto logoutDto)
     {
         var hashedToken = tokenHashService.Hash(logoutDto.RefreshToken);
-        var storedToken = await refreshTokenRepository.GetByTokenAsync(hashedToken);
+        var storedToken = await refreshTokenRepository.GetByToken(hashedToken);
 
         if (storedToken is null || storedToken.IsRevoked)
             return false;
 
-        await refreshTokenRepository.RevokeAsync(storedToken);
+        await refreshTokenRepository.Revoke(storedToken);
         return true;
     }
 
     public async Task<bool> LogoutAll(Guid userId)
     {
-        var user = await userRepository.GetByIdReadOnlyAsync(userId);
+        var user = await userRepository.GetByIdReadOnly(userId);
 
         if (user is null)
             return false;
 
-        await refreshTokenRepository.RevokeAllAsync(userId);
+        await refreshTokenRepository.RevokeAll(userId);
         return true;
     }
 
@@ -253,7 +254,7 @@ public class AuthService(IUserRepository userRepository,
             
             try
             {
-                var token = await userActivationTokenRepository.GetByUserIdAsync(existingUser.Id);
+                var token = await userActivationTokenRepository.GetByUserId(existingUser.Id);
                 
                 // Case when token already used.
                 if (token.IsUsed)
@@ -273,7 +274,7 @@ public class AuthService(IUserRepository userRepository,
                 // Remove old data and just continue the process.
                 // Just removing User is enough.
                 // With cascade the activation token, company user and user roles will also be deleted.
-                await userRepository.DeleteAsync(existingUser);
+                await userRepository.Delete(existingUser);
                 
             }
             catch (Exception e)
@@ -308,7 +309,7 @@ public class AuthService(IUserRepository userRepository,
             );
             
             // Save user to database
-            await userRepository.AddAsync(newUser);
+            await userRepository.Create(newUser);
             
             // Create CompanyUser with provided data
             var companyUser = CompanyUser.Create(
@@ -320,7 +321,7 @@ public class AuthService(IUserRepository userRepository,
                 companyId: companyId
             );
             
-            await companyUserRepository.AddAsync(companyUser);
+            await companyUserRepository.Create(companyUser);
             
             // Generate activation token
             var token = Guid.NewGuid().ToString("N");
@@ -330,7 +331,7 @@ public class AuthService(IUserRepository userRepository,
                 expiresAt: DateTime.UtcNow.AddHours(24) // 24 hour expiry
             );
             
-            await userActivationTokenRepository.AddAsync(activationToken);
+            await userActivationTokenRepository.Create(activationToken);
             
             // Send activation email
             var activationLink = $"https://yourfrontend.com/activate?token={token}";
@@ -374,7 +375,7 @@ public class AuthService(IUserRepository userRepository,
         try
         {
             // Get activation token from database
-            var activationToken = await userActivationTokenRepository.GetByTokenAsync(activationDto.Token);
+            var activationToken = await userActivationTokenRepository.GetByToken(activationDto.Token);
             
             if (activationToken is null)
             {
@@ -397,7 +398,7 @@ public class AuthService(IUserRepository userRepository,
             }
 
             // Get the user
-            var user = await userRepository.GetByIdAsync(activationToken.UserId);
+            var user = await userRepository.GetById(activationToken.UserId);
             
             if (user is null)
             {
@@ -423,8 +424,8 @@ public class AuthService(IUserRepository userRepository,
             activationToken.MarkAsUsed();
 
             // Save changes
-            await userRepository.UpdateAsync(user);
-            await userActivationTokenRepository.UpdateAsync(activationToken);
+            await userRepository.Update(user);
+            await userActivationTokenRepository.Update(activationToken);
 
             result.Success = true;
             result.Message = "Account activated successfully. You can now log in.";

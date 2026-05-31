@@ -1,5 +1,7 @@
 using Authentication.Domain.Entities;
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.Company;
+using Authentication.Domain.Entities.RolePermission;
 using Microsoft.EntityFrameworkCore;
 
 namespace Authentication.Infrastructure.Database;

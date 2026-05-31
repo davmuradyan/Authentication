@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.RolePermission;
 
 namespace Authentication.Application.Services.Tokens;
 

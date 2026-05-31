@@ -1,8 +1,8 @@
 using Authentication.Application.Services.Repositories;
-using Authentication.Contracts.Company.Dtos;
-using Authentication.Contracts.Company.Results;
+using Authentication.Contracts.Crud.Company.Dtos;
+using Authentication.Contracts.Crud.Company.Results;
 
-namespace Authentication.Application.Company;
+namespace Authentication.Application.CrudServices.Company;
 
 public class CompanyService(ICompanyRepository companyRepository) : ICompanyService
 {
@@ -23,7 +23,7 @@ public class CompanyService(ICompanyRepository companyRepository) : ICompanyServ
             return result;
         }
         
-        var company = Domain.Entities.Auth.Company.Create(Guid.NewGuid() ,dto.Name);
+        var company = Domain.Entities.Company.Company.Create(Guid.NewGuid() ,dto.Name);
         var createdCompany = await companyRepository.Create(company);
         
         if (createdCompany is null)

@@ -1,6 +1,4 @@
-using System.Runtime.CompilerServices;
-
-namespace Authentication.Domain.Entities.Auth;
+namespace Authentication.Domain.Entities.RolePermission;
 
 public class Permission
 {

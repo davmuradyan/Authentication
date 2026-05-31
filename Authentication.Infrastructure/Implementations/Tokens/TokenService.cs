@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Authentication.Application.Services.Tokens;
 using Authentication.Domain.Entities.Auth;
+using Authentication.Domain.Entities.RolePermission;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 

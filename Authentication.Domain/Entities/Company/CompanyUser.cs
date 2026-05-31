@@ -1,6 +1,6 @@
 using Authentication.Domain.Entities.Auth;
 
-namespace Authentication.Domain.Entities;
+namespace Authentication.Domain.Entities.Company;
 
 public class CompanyUser
 {
