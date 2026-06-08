@@ -146,6 +146,5 @@ This starter is **intentionally incomplete** — it gives you the foundation, no
 
 ## ⚠️ Important Notes
 
-- Never commit `appsettings.Development.json` with real credentials to a public repository. Add it to `.gitignore`.
 - The `global-admin` role and its policies are created in seed data. All other role/permission management is left for you to implement based on your needs.
 - Refresh tokens are stored in the database — `logout from all devices` invalidates all of them at once.
