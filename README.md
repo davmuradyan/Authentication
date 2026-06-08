@@ -34,8 +34,8 @@ A reusable, invitation-based authentication system built with **Clean Architectu
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/davmuradyan/Authentication.git
+cd Authentication
 ```
 
 ### 2. Configure your settings
